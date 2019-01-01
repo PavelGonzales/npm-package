@@ -3,7 +3,8 @@ import Vuetify, {
   VApp, // required
   VNavigationDrawer,
   VFooter,
-  VToolbar
+  VAutocomplete,
+  VIcon
 } from 'vuetify/lib'
 import { Ripple } from 'vuetify/lib/directives'
 
@@ -12,7 +13,8 @@ Vue.use(Vuetify, {
     VApp,
     VNavigationDrawer,
     VFooter,
-    VToolbar
+    VAutocomplete,
+    VIcon
   },
   directives: {
     Ripple
