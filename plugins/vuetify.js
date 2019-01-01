@@ -1,12 +1,12 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Vuetify, {
   VApp, // required
   VNavigationDrawer,
   VFooter,
   VAutocomplete,
   VIcon
-} from 'vuetify/lib'
-import { Ripple } from 'vuetify/lib/directives'
+} from 'vuetify/lib';
+import {Ripple} from 'vuetify/lib/directives';
 
 Vue.use(Vuetify, {
   components: {
@@ -19,4 +19,4 @@ Vue.use(Vuetify, {
   directives: {
     Ripple
   }
-})
+});

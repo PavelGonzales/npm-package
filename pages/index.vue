@@ -32,40 +32,40 @@
     }),
 
     computed: {
-      items () {
+      items() {
         return this.entries.map(entry => {
-          return entry.package.name
-        })
+          return entry.package.name;
+        });
       }
     },
 
     methods: {
-      select (e) {
-        console.log('eeee', e)
+      select(e) {
+        console.log('eeee', e);
       }
     },
 
     watch: {
-      search (val) {
+      search(val) {
         // Items have already been requested
-        if (this.isLoading) return
+        if (this.isLoading) return;
 
-        this.isLoading = true
+        this.isLoading = true;
 
         // Lazily load input items
         // this.$axios.get('https://api.publicapis.org/entries')
 
-        console.log(val)
+        console.log(val);
         this.$axios.get(`https://api.npms.io/v2/search/suggestions?q=${val}&size=10`)
           .then(res => {
-            this.entries = res.data
-            console.log(this.entries)
+            this.entries = res.data;
+            console.log(this.entries);
           })
           .catch(err => {
-            console.log(err)
+            console.log(err);
           })
-          .finally(() => (this.isLoading = false))
+          .finally(() => (this.isLoading = false));
       }
     }
-  }
+  };
 </script>

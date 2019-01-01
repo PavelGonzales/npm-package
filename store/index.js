@@ -1,9 +1,21 @@
 export const state = () => ({
-  sidebar: false
-})
+  package: null
+});
 
 export const mutations = {
-  toggleSidebar (state) {
-    state.sidebar = !state.sidebar
+  setPackageInfo(state, info) {
+    state.package = info;
   }
-}
+};
+
+export const getters = {
+  package: state => state.package
+};
+
+export const actions = {
+  async GET_PACKAGE_INFO({commit}, {name}) {
+    const res = await this.$axios.get(`https://api.npms.io/v2/package/${name}`);
+
+    commit('setPackageInfo', res.data);
+  }
+};
